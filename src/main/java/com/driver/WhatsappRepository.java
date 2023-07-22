@@ -23,10 +23,10 @@ public class WhatsappRepository {
         if(!userMobile.contains(mobile)){
             userMobile.add(mobile);
             User newUser=new User(name,mobile);
-            return "Success";
+            return "SUCCESS";
 
         }
-        throw new Exception("User Alredy Exist");
+        throw new Exception("User already exists");
     }
 
     public Group createGroup(List<User> users) {
@@ -144,7 +144,7 @@ public class WhatsappRepository {
             senderMap = updateSenderMap;
             return updateUsers.size()+ updateMessages.size()+ updateSenderMap.size();
         }
-        throw new Exception("User Not Found");
+        throw new Exception("User not found");
     }
 
     public String findMessage(Date start, Date end, int k) throws Exception {
